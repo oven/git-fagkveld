@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html ng-app>
+<head>
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.2/angular.min.js"></script>
+	<script src="controller.js"></script>
+</head>
+<body>
+	<div class="jumbotron">
+		<h1>CurryTime</h1>
+		<p>- Timeføring gjort vanskelig</p>
+	</div>
+
+	<div class="container-fluid">
+		<h2>Todo</h2>
+		<div ng-controller="ProsjektController">
+			<form ng-submit="addProsjekt()">
+				<input type="text" ng-model="prosjektnavn" size="30" placeholder="legg til prosjekt">
+				<input class="btn btn-primary" type="submit" value="add">
+			</form>
+
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Prosjektnavn</th>
+						<th>Mandag</th>
+						<th>Tirsdag</th>
+						<th>Onsdag</th>
+						<th>Torsdag</th>
+						<th>Fredag</th>
+						<th>Lørdag</th>
+						<th>Søndag</th>
+					</tr>
+				</thead>
+
+				<tr ng-repeat="prosjekt in prosjekter">
+					<th>{{prosjekt.navn}}</th>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
