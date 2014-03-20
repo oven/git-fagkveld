@@ -30,9 +30,12 @@
 						<th ng-repeat="dag in ukedager">{{dag}}</th>
 					</tr>
 				</thead>
-
 				<tr ng-repeat="prosjekt in prosjekter">
 					<th>{{prosjekt.navn}}</th>
+					<td ng-repeat="dag in prosjekt.dager">
+						<input type="number" min="0" max="24" ng-model="dag.timer" class="timer">
+						<input type="text" ng-model="dag.beskrivelse" class="beskrivelse">
+					</td>
 				</tr>
 			</table>
 		</div>
