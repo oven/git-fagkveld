@@ -1,5 +1,13 @@
 var ukedager = ['Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag', 'Søndag'];
 
+function summer(prosjekter, ukedag) {
+  var result = 0;
+  for (var i = 0; i < prosjekter.length; i++) {
+    result += prosjekter[i].dager[ukedag].timer;
+  }
+  return result;
+}
+
 function Dag(ukedag) {
   this.ukedag = ukedag;
   this.timer = 0;
@@ -27,5 +35,7 @@ function ProsjektController($scope) {
     $scope.prosjekter.push(new Prosjekt($scope.prosjektnavn));
     $scope.prosjektnavn = '';
   };
+
+  $scope.summer = summer;
 
 }
