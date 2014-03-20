@@ -37,6 +37,12 @@
 						<input type="text" ng-model="dag.beskrivelse" class="beskrivelse">
 					</td>
 				</tr>
+				<tfoot>
+					<tr>
+						<th>Sum timer</th>
+						<th ng-repeat="dag in ukedager">{{summer(prosjekter, $index)}}</th>
+					</tr>
+				</tfoot>
 			</table>
 		</div>
 	</div>
