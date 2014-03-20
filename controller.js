@@ -22,6 +22,14 @@ function Prosjekt(navn) {
   }
 }
 
+Prosjekt.prototype.summer = function() {
+  var sum = 0;
+  for (var i = 0; i < this.dager.length; i++) {
+    sum += this.dager[i].timer;
+  }
+  return sum;
+}
+
 function ProsjektController($scope) {
   $scope.prosjekter = [ 
   new Prosjekt("Pingvinen"), 
